@@ -3,26 +3,27 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registration</title>
+        <title>Login</title>
         
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/Login.css">
     </head>
     <body>
         <section>
             <div class="container">
+                <p id="errorMsg" class="mY-2 text-danger font-weight-bold text-center d-none">Please Enter The Correct Email | Password</p>
                 <div class="row">
                     <!-- img -->
                     <div class="col-lg-7">
                         <div class="image-reg">
-                            <img src="img/2853458.jpg" alt="reg">
+                            <img src="img/3094352.jpg" alt="log">
                         </div>
                     </div>
                     <!-- form -->
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 p-5">
                         <div class="form-reg">
-                            <h3>| Registration |</h3>
+                            <h3>| Login |</h3>
                             <h2>Welcome to Family</h2>
                             <p>A workspace to over Million influencers around<br>the global world.</p>
 
@@ -44,29 +45,18 @@
                                         <input id="pass" class="form-control form-control-sm" autocomplete="new-password" type="password">
                                     </div>
                                 </div>
-                                <!-- con pass -->
-                                <div class="group">
-                                    <i class="fas fa-lock"></i>
-                                    <div class="int">
-                                        <label for="con-pass">Repeat Password</label>
-                                        <input id="conPass" class="form-control form-control-sm" autocomplete="new-password" type="password">
-                                    </div>
-                                </div>
-                                <!-- phone -->
-                                <div class="group">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <div class="int">
-                                        <label for="phone">Phone Number</label>
-                                        <input id="phone" class="form-control form-control-sm" type="number">
-                                    </div>
-                                </div>
-                                <div class="btn-groups">
-                                    <button id="signUp" class="btn mr-2">Register Now</button>
-                                    
+
+                                <div class="btn-groups">                                    
                                     <button id="login" class="btn btn-light">
-                                    <a id="loginA" tabindex="1">Login</a>
+                                    <a id="toHomeA">Login</a>
+                                    </a></button>
+                 
+                 
+                                    <button id="signUp" class="btn btn-light mr-2">
+                                        <a id="signUpA" tabindex="1">Register Now</a>
                                     </button>
                                 </div>
+
                             <!-- </form> -->
                             </div>
 
@@ -99,6 +89,6 @@
         <script src="js/jquery-3.6.0.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/Login.js"></script>
     </body>
 </html>

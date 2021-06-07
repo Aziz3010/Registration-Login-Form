@@ -47,7 +47,7 @@ input[type=number] {
     /* background-color: mediumpurple; */
 }
 .image-reg img {
-    width: 97%;
+    width: 75%;
 }
 
 /* *************** form *************** */
@@ -123,22 +123,23 @@ input[type=number] {
     margin: 5px 0px;
 }
 
-#signUp{
+#login{
     background-color: #04aa6d;
     color: #fff;
 }
 
-#login a{
-    text-decoration: none;
-}
-#login a:hover{
-    text-decoration: none;
+#login:hover{
+    background-color: rgb(2, 133, 85);
 }
 
+#signUpA{
+    text-decoration: none;
+}
 a[tabindex]:focus{
-    color: #000;
+    color: #fff;
     outline: none;
 }
+
 
 .form-reg p{
     /* background-color: tomato; */

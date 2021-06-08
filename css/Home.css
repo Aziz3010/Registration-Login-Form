@@ -1,0 +1,49 @@
+:root {
+	--FirstColor: #f3f3f3;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--FirstColor);
+	
+}
+section{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+nav{
+	width: 100%;
+}
+h3{
+	color: black;
+}
+span{
+	color: #04aa6d;
+	position: relative;
+}
+span::after{
+	content: "";
+	position: absolute;
+	width: 3px;
+	height: 30px;
+	top: 7px;
+	right: -5px;
+	background-color: #04aa6d;
+
+}
+
+#logoutA{
+	text-decoration: none;
+}
+#logoutA[tabindex]:focus{
+	border: none;
+	color: #fff;
+	outline: none;
+	text-decoration: none;
+}

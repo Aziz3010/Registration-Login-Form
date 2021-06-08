@@ -15,15 +15,12 @@ section {
 	align-items: center;
     padding: 2.2rem 3rem;
     border-radius: 5px;
-    /* background-color: aqua; */
 }
 .container {
     box-shadow: 0px 0px 10px black;
     border-radius: 5px;
 }
-
 /* remove arrow from input [number] */
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -44,7 +41,6 @@ input[type=number] {
 .image-reg {
     width: 100%;
     text-align: center;
-    /* background-color: mediumpurple; */
 }
 .image-reg img {
     width: 75%;
@@ -61,15 +57,13 @@ input[type=number] {
 }
 
 .form-reg .frm{
-    /* background-color: springgreen; */
     border-radius: 10px;
 }
 
 .form-reg .frm .group{
-    /* background-color: tan; */
     margin-bottom: .5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     border: 1px solid rgb(107, 106, 106 , .3) ;
     border-radius: 25px;
@@ -83,12 +77,11 @@ input[type=number] {
 }
 
 .frm .group .int{
-    /* background-color: violet; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
+    width: 82%;
 }
 .int label{
     margin-right: auto !important;
@@ -110,7 +103,6 @@ input[type=number] {
 }
 
 .frm .group .int label{
-    /* background-color: sienna; */
     margin: 0;
     font-size: 13px;
 }
@@ -140,22 +132,16 @@ a[tabindex]:focus{
     outline: none;
 }
 
-
 .form-reg p{
-    /* background-color: tomato; */
     margin: 0;
 }
-
 .form-reg .icon{
-    /* background-color: yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
-
 .form-reg .icon .icon-cir{
-    /* background-color: red; */
     margin: 5px  5px;
     display: flex;
     justify-content: center;
@@ -164,12 +150,10 @@ a[tabindex]:focus{
     width: 40px;
     height: 40px;
 }
-
 .icon .icon-cir i{
     font-size: 20px;
     color: #04aa6d;
 }
-
 /* errorMsgPage */
 #cover{ 
     display: none;
@@ -182,7 +166,6 @@ a[tabindex]:focus{
     bottom: 0%;
     z-index: 4;
 }
-
 /* errorMsg */
 #layout{
     position: relative;
@@ -204,7 +187,6 @@ a[tabindex]:focus{
     font-size: 25px;
     transition: transform 500ms;
 }
-
 #exit:hover{
     cursor: pointer;
     color: #04aa6d;
@@ -215,9 +197,3 @@ a[tabindex]:focus{
         font-size: 15px;
     }
 }
-
-/* *********************** */
-
-
-
-

@@ -11,43 +11,73 @@ let errorMsgPage = document.getElementById("cover");
 let errorMsg = document.getElementById("layout");
 let msgWorinig = document.getElementById("msgWorinig")
 let exitIcon = document.getElementById("exit");
+let errorEmailMsg = document.getElementById("errorMsg");
 // //////////////// inputs Regex ////////////// //
 let emailRegex = /^[A-Za-z0-9\-\_\.]+(@)[A-Za-z]+(\.com)$/
 let passRegex = /^[A-Z][a-z0-9]+$/
 let phoneRegex = /^(01)[01258][0-9]{8}$/
-
-
 // //////////////// data storage ////////////// //
-var usersData = [];
 
-console.log(JSON.parse(localStorage.getItem("Users")))
+var usersData ;
 
-
-if(JSON.parse(localStorage.getItem("Users")) == null){
+if(localStorage.getItem("Users") == null){
     usersData = [];
 }else{
     usersData = JSON.parse(localStorage.getItem("Users"));
 };
 
+console.log(localStorage.getItem("Users"));
 
 // //////////////// signUp BTN ////////////// //
 signUpBTN.addEventListener("click",function(){    
     
     if(validation() === true){
-        user = {
-            userEmail : emailInp.value,
-            userPass : passInp.value,
-            userConPass : conPassInp.value,
-            userPhone : phoneInp.value
-        };
-        usersData.push(user);
-        localStorage.setItem("Users",JSON.stringify(usersData));    
-        // clearInps();
-        greenMsg();
+        
+        if(isExist() == false){
+            user = {
+                userEmail : emailInp.value,
+                userPass : passInp.value,
+                userConPass : conPassInp.value,
+                userPhone : phoneInp.value
+            };
+            usersData.push(user);
+            localStorage.setItem("Users",JSON.stringify(usersData));    
+            clearInps();
+            greenMsg();
+        }else{
+            console.log("mesh tamam")
+            errorEmailMsg.classList.remove("d-none")
+        }
     }else{
         redMsg();
     }
 });
+
+// //////////////// Is Email Exist? ////////////// //
+function isExist(){
+    
+    if(localStorage.getItem("Users") == null){
+        console.log("الذاكرة فارغه")
+        return false
+    } else if(forLoop() == true){
+        console.log("الايميل مكرر سابقا")
+        return true
+    }else{
+        console.log("الايميل جديد")
+        return false
+    }
+};
+console.log(isExist())
+
+function forLoop(){
+    for(var i=0;i<usersData.length;i++){
+        if (emailInp.value === usersData[i].userEmail) {
+            return true
+        }else{
+            return false
+        }
+    }
+};
 
 // //////////////// validation ////////////// //
 function emailValidation(){
@@ -100,7 +130,6 @@ function greenMsg(){
     errorMsg.style.color = "#04aa6d";
     msgWorinig.innerHTML = `Registration Done`;
 };
-
 function redMsg(){
     errorMsgPage.style.display = "flex";
     errorMsg.style.display = "flex";
@@ -108,7 +137,6 @@ function redMsg(){
     errorMsg.style.color = "red";
     msgWorinig.innerHTML = `Please Fill All Fields`;
 };
-
 // //////////////// closeMsg ////////////// //
 exitIcon.addEventListener("click",function(){
     errorMsgPage.style.display = "none"
@@ -165,9 +193,6 @@ errorMsgPage.addEventListener("click",function(){
             }
         })
 })();
-
-
-
 // //////////////// login vars ////////////// //
 let loginBtn = document.getElementById("login");
 let loginA = document.getElementById("loginA");

@@ -26,7 +26,7 @@ if(localStorage.getItem("Users") == null){
     usersData = JSON.parse(localStorage.getItem("Users"));
 };
 
-console.log(localStorage.getItem("Users"));
+console.log(JSON.parse(localStorage.getItem("Users")));
 
 // //////////////// signUp BTN ////////////// //
 signUpBTN.addEventListener("click",function(){    
@@ -45,7 +45,6 @@ signUpBTN.addEventListener("click",function(){
             clearInps();
             greenMsg();
         }else{
-            console.log("mesh tamam")
             errorEmailMsg.classList.remove("d-none")
         }
     }else{
@@ -54,29 +53,40 @@ signUpBTN.addEventListener("click",function(){
 });
 
 // //////////////// Is Email Exist? ////////////// //
-function isExist(){
-    
+function isExist(){    
     if(localStorage.getItem("Users") == null){
         console.log("الذاكرة فارغه")
         return false
-    } else if(forLoop() == true){
+    } 
+    else if(checking() == true){
         console.log("الايميل مكرر سابقا")
         return true
-    }else{
+    }
+    else{
         console.log("الايميل جديد")
         return false
     }
 };
-console.log(isExist())
 
-function forLoop(){
-    for(var i=0;i<usersData.length;i++){
-        if (emailInp.value === usersData[i].userEmail) {
-            return true
-        }else{
-            return false
-        }
+function checking(){
+    
+    if(emailInp.value != "" && loopOnEmails() == true){
+        console.log("mesh faaaadi & mawgood")
+        return true
+    }else{
+        console.log("faaaadi & mesh mawgood")
+        return false
     }
+
+
+};
+
+function loopOnEmails(){
+    for(var i=0 ; i<usersData.length ; i++){
+        if(usersData[i].userEmail == emailInp.value){
+            return true
+        }
+    }  
 };
 
 // //////////////// validation ////////////// //
